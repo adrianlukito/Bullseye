@@ -5,12 +5,29 @@
 //  Created by Adrian Lukito Lo on 08/02/26.
 //
 
-import Testing
+import XCTest
+@testable import Bullseye
 
-struct BullseyeTests {
+final class BullseyeTests: XCTestCase {
+    var game: Game!
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    override func setUpWithError() throws {
+        game = Game()
     }
 
+    override func tearDownWithError() throws {
+        game = nil
+    }
+    
+    func testScorePositive() {
+        let guess = game.target + 5
+        let score = game.points(sliderValue: guess)
+        XCTAssertEqual(score, 95)
+    }
+    
+    func testScoreNegative() {
+        let guess = game.target - 5
+        let score = game.points(sliderValue: guess)
+        XCTAssertEqual(score, 95)
+    }
 }

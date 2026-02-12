@@ -12,7 +12,13 @@
     "testTimeoutsEnabled" : true
   },
   "testTargets" : [
-
+    {
+      "target" : {
+        "containerPath" : "container:Bullseye.xcodeproj",
+        "identifier" : "B973E0BA2F38DBF000927060",
+        "name" : "BullseyeTests"
+      }
+    }
   ],
   "version" : 1
 }
