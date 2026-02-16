@@ -21,7 +21,9 @@ struct PointsView: View {
             BodyText(text: "You scored \(points) Points\n 🎉🎉🎉")
             Button(
                 action: {
-                    alertIsVisible = false
+                    withAnimation {
+                        alertIsVisible = false
+                    }
                     game.startNewRound(points: points)
                 },
                 label: {
