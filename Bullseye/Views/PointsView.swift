@@ -36,7 +36,7 @@ struct PointsView: View {
         .background(
             Color("BackgroundColor")
         )
-        .cornerRadius(12)
+        .cornerRadius(Constants.General.roundRectCorderRadius)
         .shadow(radius: 10, x: 5, y: 5)
     }
 }
